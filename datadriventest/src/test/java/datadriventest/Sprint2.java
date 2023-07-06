@@ -1,4 +1,4 @@
-package dataDrivenTesting;
+package datadriventest;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -17,6 +17,8 @@ public class Sprint2 {
 		XSSFWorkbook wb = new XSSFWorkbook(file);
 		XSSFSheet sheet = wb.getSheet(xlsheet);
 		int tot_Rows = sheet.getLastRowNum();
+		wb.close();
+		file.close();
 		return tot_Rows;
 	}
 
@@ -27,7 +29,10 @@ public class Sprint2 {
 		XSSFSheet sheet = wb.getSheet(xlsheet);
 		XSSFRow row = sheet.getRow(RowNum);
 		int tot_cells = row.getLastCellNum();
-		return tot_cells;
+		wb.close();
+		file.close();
+		return tot_cells
+				;
 	}
 
 	// Get CellData by getCellValue() method from cell...
